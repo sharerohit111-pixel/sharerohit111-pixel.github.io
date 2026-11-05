@@ -1,0 +1,17 @@
+{
+  "name": "Railway Allowance Calculator",
+  "short_name": "Railway Allowance",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#061a42",
+  "theme_color": "#061a42",
+  "description": "NDA and OTA calculators for railway employees",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
