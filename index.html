@@ -73,6 +73,10 @@ main{padding:14px 13px 0}.section-card{border-radius:23px;overflow:hidden;margin
    <button class="tool" data-action="pdf"><span class="ico">📄</span>PDF रिपोर्ट<small>Report</small></button>
    <button class="tool" data-open="morePage"><span class="ico">🧰</span>अन्य भत्ते<small>More Tools</small></button>
    <button class="tool" id="shareBtn"><span class="ico">🔗</span>ऐप शेयर करें<small>Share App</small></button>
+   <button class="tool" id="installAppBtn">
+<span class="ico">📲</span>Install App
+<small>मोबाइल में इंस्टॉल करें</small>
+   </button>
   </div>
   <div class="ad-slot" id="homeAd">Advertisement space — Ad network approval and publisher code required</div>
  </div>
@@ -258,6 +262,27 @@ isSupported().then((supported) => {
     });
   }
 }).catch(console.error);
+ let deferredInstallPrompt = null;
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  deferredInstallPrompt = event;
+});
+
+document.getElementById("installAppBtn").addEventListener("click", async () => {
+  if (deferredInstallPrompt) {
+    deferredInstallPrompt.prompt();
+    await deferredInstallPrompt.userChoice;
+    deferredInstallPrompt = null;
+  } else {
+    alert("Chrome मेनू ⋮ खोलें और Add to Home screen या Install app चुनें।");
+  }
+});
+
+window.addEventListener("appinstalled", () => {
+  deferredInstallPrompt = null;
+  alert("ऐप सफलतापूर्वक इंस्टॉल हो गया!");
+});
 </script>
  </body>
 </html>
