@@ -1,4 +1,5 @@
-const CACHE = "railway-allowance-v3";
+
+const CACHE = "railway-allowance-v4";
 
 self.addEventListener("install", event => {
   self.skipWaiting();
