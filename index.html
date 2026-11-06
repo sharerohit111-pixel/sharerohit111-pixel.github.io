@@ -169,7 +169,7 @@ $("privacyBtn").addEventListener("click",()=>alert("Privacy: This version calcul
 $("premiumBtn").addEventListener("click",()=>alert("Premium membership and payment are planned features. Payment is not enabled in this version."));
 function calcNDA(){
  const bs=$("ndaBasic").value,ds=$("ndaDa").value,hs=$("ndaHours").value,b=Number(bs),d=Number(ds),h=Number(hs);
- const valid=bs!==""&&ds!==""&&hs!==""&&Number.isFinite(b)&&Number.isFinite(d)&&Number.isFinite(h)&&b>0&&d>=0&&h>0&&h<=24;
+ const valid=bs!==""&&ds!==""&&hs!==""&&Number.isFinite(b)&&Number.isFinite(d)&&Number.isFinite(h)&&b>0&&d>=0&&h>0&&h<=2000;
  if(!valid){$("ndaPerHour").textContent="—";$("ndaTotal").textContent="—";$("ndaStatus").textContent="कृपया सही मान भरें। Basic Pay शून्य से अधिक, DA शून्य या अधिक और घंटे 0 से अधिक तथा 24 से अधिक होने चाहिए।";$("ndaStatus").className="status error";latestNDA=null;return;}
  const hourly=(b+d)/1200,total=hourly*h;
  $("ndaPerHour").textContent=money(hourly);$("ndaTotal").textContent=money(total);$("ndaStatus").textContent="गणना पूरी हुई।";$("ndaStatus").className="status";
