@@ -80,7 +80,7 @@ main{padding:14px 13px 0}.section-card{border-radius:23px;overflow:hidden;margin
   <h2 class="page-title">🌙 Night Duty Allowance (NDA)</h2><p class="sub">अपनी वेतन और ड्यूटी जानकारी भरें</p>
   <div class="field"><label for="ndaBasic">Basic Pay (₹)</label><input id="ndaBasic" type="number" inputmode="decimal" min="0" step="0.01" value="25500" placeholder="Basic Pay"></div>
   <div class="field"><label for="ndaDa">DA Amount (₹)</label><input id="ndaDa" type="number" inputmode="decimal" min="0" step="0.01" value="13600" placeholder="DA Amount"></div>
-  <div class="field"><label for="ndaHours">Night Duty Hours</label><input id="ndaHours" type="number" inputmode="decimal" min="0" max="24" step="0.01" value="8" placeholder="Night Duty Hours"></div>
+  <div class="field"><label for="ndaHours">Night Duty Hours</label><input id="ndaHours" type="number" inputmode="decimal" min="0"  max="2000"step="0.01" value="8" placeholder="Night Duty Hours"></div>
   <button class="primary-btn" id="ndaCalc">Calculate NDA</button>
   <div class="output"><h3>गणना का परिणाम</h3><div class="output-grid"><div class="metric"><small>NDA per Hour</small><b id="ndaPerHour">₹ 32.58</b></div><div class="metric"><small>Total NDA</small><b id="ndaTotal">₹ 260.67</b></div></div><p class="status" id="ndaStatus">गणना के लिए विवरण भरें।</p><div class="form-grid" style="margin-top:10px"><button class="secondary-btn" id="saveNDA">💾 इतिहास में सेव करें</button><button class="secondary-btn" id="pdfNDA">📄 NDA PDF डाउनलोड</button></div></div>
   <button class="secondary-btn backHome">← Home</button>
