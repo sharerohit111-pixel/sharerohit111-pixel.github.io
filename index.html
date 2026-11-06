@@ -232,4 +232,34 @@ document.querySelectorAll('[data-action="pdf"]').forEach(b=>b.addEventListener("
 renderHistory();
 if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}))}
 </script>
-</body></html>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+import { getAnalytics, isSupported, logEvent } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBa_wFexiyZM6BxcZ0TreH1_N5i85Kb2VY",
+  authDomain: "railway-allowance-analytics.firebaseapp.com",
+  projectId: "railway-allowance-analytics",
+  storageBucket: "railway-allowance-analytics.firebasestorage.app",
+  messagingSenderId: "192960468278",
+  appId: "1:192960468278:web:a90c38f135643e7710cf97",
+  measurementId: "G-8XDHQ01XBD"
+};
+
+const app = initializeApp(firebaseConfig);
+
+isSupported().then((supported) => {
+  if (supported) {
+    const analytics = getAnalytics(app);
+    logEvent(analytics, "app_open");
+    window.addEventListener("appinstalled", () => {
+      logEvent(analytics, "pwa_installed");
+    });
+  }
+}).catch(console.error);
+</scrip>
+ </body>
+</html>
+
+
