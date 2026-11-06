@@ -1,3 +1,4 @@
+
 {
   "name": "Railway Allowance Calculator",
   "short_name": "Railway Allowance",
@@ -11,7 +12,13 @@
       "src": "./icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "./railway-allowance-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }
